@@ -13,8 +13,8 @@ const makeStore = () => {
 
   const domString = `
     <h2>Our One Book</h2>
-    Buy now! It's only
-    <h3 id="book-price">${bookInfo.price}</h3>
+    <h4>Buy now! It's only</h4>
+    <h3 id="book-price">$${bookInfo.price}</h3>
     <img class="book-image" src="${bookInfo.image}" alt="book cover">
     <button id="add-to-cart" class="btn btn-danger">Add to cart</button>
   `;
