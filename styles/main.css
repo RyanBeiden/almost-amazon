@@ -13,3 +13,7 @@ body {
 .book-image {
   width: 300px;
 }
+
+#cart {
+  border: 2px solid green;
+}

@@ -1,10 +1,22 @@
-import utils from '../helpers/utils.js'
+import utils from '../helpers/utils.js';
+import cartData from '../helpers/data/cartData.js';
+
+const addToCart = (newBook) => {
+  cartData.setCart(newBook);
+  cartToDom();
+}
 
 const cartToDom = () => {
-  const domString = `
-    <h3>THIS IS THE CART</h3>
-  `;
+  const myCart = cartData.getCart();
+  let domString = '';
+  for (let i = 0; i < myCart.length; i++) {
+    const cartItem = myCart[i];
+    domString += `
+      <h3>${cartItem.title}</h3>
+    `;
+  }
+
   utils.printToDom('#cart', domString);
 }
 
-export default { cartToDom };
+export default { addToCart };
