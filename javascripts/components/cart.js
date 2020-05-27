@@ -8,11 +8,17 @@ const addToCart = (newBook) => {
 
 const cartToDom = () => {
   const myCart = cartData.getCart();
-  let domString = '';
+  let domString = `
+    <div class="d-flex justify-content-center">
+      <h3>CART</h3>
+    </div>
+  `;
   for (let i = 0; i < myCart.length; i++) {
     const cartItem = myCart[i];
     domString += `
-      <h3>${cartItem.title}</h3>
+      <div class="d-flex justify-content-center">
+        <h4 id="cart-text">${cartItem.title}</h4>
+      </div>
     `;
   }
 
